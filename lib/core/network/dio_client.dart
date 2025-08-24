@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_core_clean_mvvm/core/network/exceptions/dio_client_exception.dart';
+import 'package:tabi_cook/core/network/exceptions/dio_client_exception.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

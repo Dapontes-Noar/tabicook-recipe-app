@@ -1,4 +1,4 @@
-package com.example.flutter_core_clean_mvvm
+package com.example.tabi_cook
 
 import io.flutter.embedding.android.FlutterActivity
 

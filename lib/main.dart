@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_core_clean_mvvm/core/utils/extensions/context_extensions.dart';
-import 'package:flutter_core_clean_mvvm/l10n/app_localizations.dart';
+import 'package:tabi_cook/core/utils/extensions/context_extensions.dart';
+import 'package:tabi_cook/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'core/di/injector.dart';
 

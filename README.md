@@ -1,49 +1,48 @@
-# flutter-core-clean-mvvm
+# TabiCook
 
-A flutter core with Clean architecture, MVVM design pattern with Bloc, Get_it, Dio, Hive and intl
+**TabiCook** — discover recipes, save favorites and export shopping lists.  
+A small, polished Flutter sample app built as a technical submission: uses TheMealDB API for recipe search, **Dio** for
+networking, **Hive** for local storage, **GetIt** for DI, **go_router** for navigation, **flutter_gen / intl** for i18n,
+and **flutter_bloc / Cubit** for presentation.
 
-## Getting Started
-
-This project is a starting point for a Flutter application
-
-## Starting the project
-
-1. Clone the repository
-   ```bash
-   git clone
-    ```
-2. Navigate to the project directory
-   ```bash
-   cd flutter_core_clean_mvvm
-   ```
-3. Install dependencies
-   ```bash
-   flutter pub get
-   ```
-4. For code generation (models, localization, etc.), run:
-   ```bash
-   flutter pub run build_runner build --delete-conflicting-outputs
-   ```
-5. Generate localization files
-   ```bash
-   flutter pub run intl_utils:generate
-   ```
-6. Run the app
-   ```bash
-    flutter run -t lib/main_dev.dart
-    ```
-Can you use this command for installation, code generation and localization in one step:
-
-```bash
-  flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
-```
-
-To document the use of a general registration class named `RegisterModule` for dependency injection, add a section to
-your `README.md` like this:
+> Tabi = travel / journey — this app helps you travel flavors at home.
 
 ---
 
-# Developer Guide
+## Quick links
+
+- Demo: *(pending link)*
+- CI: `.github/workflows/flutter-repo-checks.yml`
+- Submission archive: `DianaPonte_TabiCook_AllSamples_v1_<YYYYMMDD>.zip`
+- Author: Diana Aponte — primary author of all code in this repo.
+
+---
+
+## What this sample demonstrates (mapped to Fueled request)
+
+- **UI Composition**: component-based widgets, responsive recipe cards, widget tests.
+- **Data Persistence**: Hive usage for Favorites & Shopping List (manual TypeAdapters included).
+- **Networking Integration**: Dio-based `DioClient`, `RecipeRemoteDataSource` for TheMealDB.
+- **Architecture**: Clean Architecture (features/data-domain-presentation), MVVM-like with bloC, GetIt for DI.
+- **i18n**: English & Spanish via Flutter `gen_l10n` + `intl`.
+- **Routing**: `go_router` with typed params.
+- **CI**: `flutter-repo-checks.yml` — format, codegen, analyze, tests, coverage upload.
+
+---
+
+## Tech stack
+
+- Flutter + Dart
+- State: `flutter_bloc`  + `equatable`
+- DI: `get_it` +`injectable`
+- Networking: `dio` + `http_mock_adapter`
+- Persistence: `hive` (manual adapters included)
+- Routing: `go_router`
+- Localization: `flutter_gen` / `intl` (ARB files in `lib/l10n/`)
+- Tests: `flutter_test`, `mockito`, `http_mock_adapter`
+- CI: GitHub Actions (`.github/workflows/flutter-repo-checks.yml`)
+
+---
 
 ## Architecture Overview
 
@@ -68,7 +67,9 @@ divided into several layers:
 - **Documentation**: Comprehensive documentation is provided to assist developers in understanding and contributing to
   the project.
 
-## Packages structure
+---
+
+## Project structure (top-level)
 
 This project is structured in a way that follows the Clean Architecture principles. The main packages are:
 
@@ -118,6 +119,55 @@ Here’s a detailed section for your `README.md` describing the package structur
 
 This structure supports modularity, scalability, and maintainability, following Clean Architecture and MVVM principles
 for Flutter development.
+
+## Getting Started
+
+**Prerequisites**
+
+- Flutter SDK (stable)
+- Android Studio / Xcode if you want to run on device/emulator
+
+**Clone & setup**
+
+```bash
+  git clone git@github.com:YOUR_USER/TabiCook.git
+  cd TabiCook
+```
+
+### Starting the project
+
+1. Install dependencies
+   ```bash
+   flutter pub get
+   ```
+2. For code generation (models, localization, etc.), run:
+   ```bash
+   flutter pub run build_runner build --delete-conflicting-outputs
+   ```
+3. Generate localization files
+   ```bash
+   flutter pub run intl_utils:generate
+   ```
+4. Run the app
+   ```bash
+    flutter run -t lib/main_dev.dart
+    ```
+
+Can you use this command for installation, code generation and localization in one step:
+
+```bash
+  flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
+```
+
+To document the use of a general registration class named `RegisterModule` for dependency injection, add a section to
+your `README.md` like this:
+
+---
+
+# Developer Guide
+
+In this section, we provide guidance on key aspects of the project, including dependency injection, routing, and
+localization.
 
 ## Dependency Injection with RegisterModule
 

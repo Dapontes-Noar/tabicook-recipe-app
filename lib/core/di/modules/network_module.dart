@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_core_clean_mvvm/core/network/api_constants.dart';
-import 'package:flutter_core_clean_mvvm/core/network/interceptors/logger_interceptor.dart';
+import 'package:tabi_cook/core/network/api_constants.dart';
+import 'package:tabi_cook/core/network/interceptors/logger_interceptor.dart';
 import 'package:injectable/injectable.dart';
 
 @module

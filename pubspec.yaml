@@ -1,5 +1,5 @@
-name: flutter_core_clean_mvvm
-description: "A flutter core with Clean architecture, MVVM design pattern with Bloc, Get_it, Dio, Hive and intl"
+name: tabi_cook
+description: "TabiCook — Recipe search & shopping: TheMealDB search, favorites (Hive), Dio networking, GetIt DI, go_router, i18n."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
