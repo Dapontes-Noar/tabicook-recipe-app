@@ -1,0 +1,48 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+pubspec.lock
+
+# Android/Java/Kotlin/Gradle
+android/.gradle/
+android/app/build/
+*.iml
+.gradle/
+local.properties
+*.keystore
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/build/
+*.xcworkspace
+*.xcuserstate
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.egg-info/
+dist/
+
+# IDEs
+.idea/
+.vscode/
+
+# Misc
+.DS_Store
+*.log
+
+#auto generated files
+*.config.dart
+*.g.dart
