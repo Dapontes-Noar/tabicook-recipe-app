@@ -1,4 +1,4 @@
-import 'package:flutter_core_clean_mvvm/main.dart';
+import 'package:tabi_cook/main.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter buildAppRouter() => GoRouter(

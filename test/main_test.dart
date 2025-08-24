@@ -1,8 +1,8 @@
 // test/main_test.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_core_clean_mvvm/routes/app_router.dart';
+import 'package:tabi_cook/routes/app_router.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_core_clean_mvvm/main.dart';
+import 'package:tabi_cook/main.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
