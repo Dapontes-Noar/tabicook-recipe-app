@@ -79,11 +79,14 @@ lib/
 ├─ main_dev.dart              # Main entry for development builds
 ├─ core/                      # Shared utilities, dependency injection, network, constants
 │  ├─ di/                     # Dependency injection setup (e.g., Get_it)
+|  |  └─ modules              # Dependency registration modules (e.g., RegisterModule)
 │  ├─ network/                # Network clients, API configuration (e.g., Dio)
 |  |   ├─ exceptions/         # Custom exceptions for network errors
 │  │   └─ interceptors/       # Dio interceptors for logging, auth, etc.
 │  ├─ utils/                  # Common utility functions and helpers
-|      └─extensions/          # Dart extensions
+|  |   ├─ constants/          # App-wide constants
+|  |   ├─ exceptions/         # General exceptions
+|      └─ extensions/         # Dart extensions
 ├─ [features]/                # Modular feature folders (specific for each feature) 
 │   ├─ data/                  # Data layer
 │   │  ├─ datasources/        # Remote/local data sources
@@ -171,7 +174,7 @@ localization.
 
 ## Dependency Injection with RegisterModule
 
-This project uses a general module class, `RegisterModule`, to register dependencies via `get_it` and `injectable`.
+This project uses a general module class, `RegisterModule`,  to register dependencies via `get_it` and `injectable`.
 
 **Example Implementation:**
 

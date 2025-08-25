@@ -1,6 +1,6 @@
 import 'package:tabi_cook/core/utils/exceptions/recipes_exception.dart';
 import 'package:tabi_cook/features/recipes/data/models/recipe_model.dart';
-import 'package:tabi_cook/features/recipes/data/repositories/recipes_repository.dart';
+import 'package:tabi_cook/features/recipes/domain/repositories/recipes_repository.dart';
 
 /// Use case for fetching a recipe by its ID from the repository.
 class GetRecipeByIdUseCase {

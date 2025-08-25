@@ -7,6 +7,7 @@ class RecipesException implements Exception {
   static const String _networkError = 'Network/API error';
   static const String _fetchFailed = 'Failed to fetch recipes';
   static const String _noRecipesFound = 'No recipes found';
+  static const String _noRecipesByName = 'No recipes found for the given name';
   static const String _recipeExceptionName = '[RecipesRepositoryException]';
 
   const RecipesException._(this.message, [this.additionalInfo]);
@@ -19,6 +20,9 @@ class RecipesException implements Exception {
 
   factory RecipesException.noRecipesFound([String? info]) =>
       RecipesException._(_noRecipesFound, info);
+
+  factory RecipesException.noRecipesByName([String? info]) =>
+      RecipesException._(_noRecipesByName, info);
 
   factory RecipesException.fetchFailed([String? info]) =>
       RecipesException._(_fetchFailed, info);
