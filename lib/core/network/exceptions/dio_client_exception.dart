@@ -1,3 +1,4 @@
+/// Custom exception class for handling Dio client errors.
 class DioClientException implements Exception {
   final int? statusCode;
   final String message;

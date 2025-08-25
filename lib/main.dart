@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tabi_cook/core/utils/extensions/context_extensions.dart';
+import 'package:tabi_cook/features/recipes/data/repositories/recipes_repository.dart';
+import 'package:tabi_cook/features/recipes/data/usescases/get_categories_usecase.dart';
 import 'package:tabi_cook/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'core/di/injector.dart';
@@ -40,9 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+    final GetCategoriesUseCase getCategoriesUseCase = GetCategoriesUseCase(
+      getIt<RecipesRepository>(),
+    );
+    getCategoriesUseCase.call();
   }
 
   @override

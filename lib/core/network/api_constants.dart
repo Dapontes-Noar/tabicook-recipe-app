@@ -1,3 +1,4 @@
+/// This class contains all the constants related to API calls, such as base URLs,
 class ApiConstants {
   //TODO: remember to change the base URL to the production one
   static const String defaultBaseUrl =
@@ -12,10 +13,7 @@ class ApiConstants {
   static const Duration sendTimeout = Duration(seconds: 30);
 
   static const Map<String, String> defaultHeaders = {
-    'Content-Type': 'application/json',
-    'Accept': '*/*',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Accept': 'application/json',
   };
 
   static const int statusOk = 200;

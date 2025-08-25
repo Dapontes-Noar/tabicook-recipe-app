@@ -39,6 +39,7 @@ dependencies:
   injectable: ^2.5.1
   injectable_generator: ^2.8.1
   intl: ^0.20.2
+  json_annotation: ^4.9.0
   #ui
   cupertino_icons: ^1.0.8
   #test
@@ -49,6 +50,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^6.0.0
   build_runner: ^2.7.0
+  json_serializable: ^6.10.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

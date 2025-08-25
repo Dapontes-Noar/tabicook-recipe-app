@@ -3,6 +3,7 @@ import 'package:tabi_cook/core/network/api_constants.dart';
 import 'package:tabi_cook/core/network/interceptors/logger_interceptor.dart';
 import 'package:injectable/injectable.dart';
 
+/// Network module for dependency injection.
 @module
 abstract class RegisterModule {
   @lazySingleton

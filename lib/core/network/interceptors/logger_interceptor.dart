@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
+/// A Dio interceptor that logs request, response, and error information.
 class LoggerInterceptor extends Interceptor {
   LoggerInterceptor();
 
