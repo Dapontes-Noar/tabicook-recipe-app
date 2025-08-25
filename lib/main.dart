@@ -3,6 +3,7 @@ import 'package:tabi_cook/core/utils/extensions/context_extensions.dart';
 import 'package:tabi_cook/features/recipes/data/repositories/recipes_repository.dart';
 import 'package:tabi_cook/features/recipes/data/usescases/get_categories_usecase.dart';
 import 'package:tabi_cook/features/recipes/data/usescases/get_recipe_by_id_usecase.dart';
+import 'package:tabi_cook/features/recipes/data/usescases/get_recipes_by_category_usecase.dart';
 import 'package:tabi_cook/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'core/di/injector.dart';
@@ -43,15 +44,13 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    GetRecipeByIdUseCase getRecipeByIdUseCase = GetRecipeByIdUseCase(
-        getIt<RecipesRepository>());
+    GetRecipesByCategoryUseCase getRecipesByCategoryUseCase =
+        GetRecipesByCategoryUseCase(getIt<RecipesRepository>());
     
-    getRecipeByIdUseCase.call('52772').then((recipe) {
-      // Handle the fetched recipe
-      print('Fetched recipe: ${recipe.strMeal}');
-    }).catchError((error) {
-      // Handle errors
-      print('Error fetching recipe: $error');
+    getRecipesByCategoryUseCase.call('Seafood').then((recipesList) {
+      setState(() {
+        _counter++;
+      });
     });
   }
 

@@ -9,6 +9,8 @@ import 'package:tabi_cook/features/recipes/data/models/recipes_model.dart';
 abstract class RecipesRepository {
   Future<RecipesModel> getRecipesById(String id);
 
+  Future<RecipesModel> getRecipesByCategory(String category);
+
   Future<CategoriesModel> getCategories();
 }
 
@@ -35,7 +37,24 @@ class RecipesRepositoryImpl implements RecipesRepository {
       throw RecipesException.fetchFailed(e.toString());
     }
   }
-  
+
+  /// Fetches recipes by category from the data source.
+  @override
+  Future<RecipesModel> getRecipesByCategory(String category) async {
+    try {
+      final recipesResponse = await _dataSource.getRecipesByCategory(category);
+      if (recipesResponse.meals != null && recipesResponse.meals!.isNotEmpty) {
+        return recipesResponse;
+      } else {
+        throw RecipesException.noRecipesFound();
+      }
+    } on DioClientException catch (e) {
+      throw RecipesException.networkError(e.message);
+    } catch (e) {
+      throw RecipesException.fetchFailed(e.toString());
+    }
+  }
+
   /// Fetches recipe categories from the data source.
   @override
   Future<CategoriesModel> getCategories() async {

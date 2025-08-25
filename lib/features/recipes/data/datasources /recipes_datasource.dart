@@ -9,6 +9,8 @@ import 'package:tabi_cook/features/recipes/data/models/recipes_model.dart';
 abstract class RecipesDataSource {
   Future<RecipesModel> getRecipesById(String id);
 
+  Future<RecipesModel> getRecipesByCategory(String category);
+
   Future<CategoriesModel> getCategories();
 }
 
@@ -25,6 +27,26 @@ class RecipesDataSourceImpl implements RecipesDataSource {
       final response = await _dio.get(
         '/lookup.php',
         queryParameters: {'i': id},
+      );
+      if (response.statusCode == ApiConstants.statusOk) {
+        return RecipesModel.fromJson(response.data as Map<String, dynamic>);
+      } else {
+        throw DioClientException.unknown(response.statusCode);
+      }
+    } on DioException catch (e) {
+      throw DioClientException.network(e.response?.statusCode);
+    } catch (e) {
+      throw Exception('${AppConstants.unexpectedError}: $e');
+    }
+  }
+
+  /// Fetches recipes by category from the API.
+  @override
+  Future<RecipesModel> getRecipesByCategory(String category) async {
+    try {
+      final response = await _dio.get(
+        '/filter.php',
+        queryParameters: {'c': category},
       );
       if (response.statusCode == ApiConstants.statusOk) {
         return RecipesModel.fromJson(response.data as Map<String, dynamic>);
