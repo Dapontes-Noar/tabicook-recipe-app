@@ -2,10 +2,13 @@ import 'package:tabi_cook/core/network/exceptions/dio_client_exception.dart';
 import 'package:tabi_cook/core/utils/exceptions/recipes_exception.dart';
 import 'package:tabi_cook/features/recipes/data/datasources%20/recipes_datasource.dart';
 import 'package:tabi_cook/features/recipes/data/models/categories_model.dart';
+import 'package:tabi_cook/features/recipes/data/models/recipes_model.dart';
 
 /// Abstract repository for fetching recipe data.
 /// /// Implementations should provide data retrieval logic from a data source.
 abstract class RecipesRepository {
+  Future<RecipesModel> getRecipesById(String id);
+
   Future<CategoriesModel> getCategories();
 }
 
@@ -16,6 +19,24 @@ class RecipesRepositoryImpl implements RecipesRepository {
   /// Creates a [RecipesRepositoryImpl] with the given [RecipesDataSource].
   RecipesRepositoryImpl(this._dataSource);
 
+  /// Fetches recipes by ID from the data source.
+  @override
+  Future<RecipesModel> getRecipesById(String id) async {
+    try {
+      final recipesResponse = await _dataSource.getRecipesById(id);
+      if (recipesResponse.meals != null && recipesResponse.meals!.isNotEmpty) {
+        return recipesResponse;
+      } else {
+        throw RecipesException.noRecipesFound();
+      }
+    } on DioClientException catch (e) {
+      throw RecipesException.networkError(e.message);
+    } catch (e) {
+      throw RecipesException.fetchFailed(e.toString());
+    }
+  }
+  
+  /// Fetches recipe categories from the data source.
   @override
   Future<CategoriesModel> getCategories() async {
     try {

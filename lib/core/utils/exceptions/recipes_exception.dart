@@ -6,6 +6,8 @@ class RecipesException implements Exception {
   static const String _noCategoriesFound = 'No categories found';
   static const String _networkError = 'Network/API error';
   static const String _fetchFailed = 'Failed to fetch recipes';
+  static const String _noRecipesFound = 'No recipes found';
+  static const String _recipeExceptionName = '[RecipesRepositoryException]';
 
   const RecipesException._(this.message, [this.additionalInfo]);
 
@@ -15,10 +17,13 @@ class RecipesException implements Exception {
   factory RecipesException.networkError([String? info]) =>
       RecipesException._(_networkError, info);
 
+  factory RecipesException.noRecipesFound([String? info]) =>
+      RecipesException._(_noRecipesFound, info);
+
   factory RecipesException.fetchFailed([String? info]) =>
       RecipesException._(_fetchFailed, info);
 
   @override
   String toString() =>
-      '[RecipesRepositoryException] ${additionalInfo == null ? message : '$message: $additionalInfo'}';
+      '$_recipeExceptionName ${additionalInfo == null ? message : '$message: $additionalInfo'}';
 }

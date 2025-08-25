@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tabi_cook/core/utils/extensions/context_extensions.dart';
 import 'package:tabi_cook/features/recipes/data/repositories/recipes_repository.dart';
 import 'package:tabi_cook/features/recipes/data/usescases/get_categories_usecase.dart';
+import 'package:tabi_cook/features/recipes/data/usescases/get_recipe_by_id_usecase.dart';
 import 'package:tabi_cook/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'core/di/injector.dart';
@@ -42,17 +43,26 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
-    final GetCategoriesUseCase getCategoriesUseCase = GetCategoriesUseCase(
-      getIt<RecipesRepository>(),
-    );
-    getCategoriesUseCase.call();
+    GetRecipeByIdUseCase getRecipeByIdUseCase = GetRecipeByIdUseCase(
+        getIt<RecipesRepository>());
+    
+    getRecipeByIdUseCase.call('52772').then((recipe) {
+      // Handle the fetched recipe
+      print('Fetched recipe: ${recipe.strMeal}');
+    }).catchError((error) {
+      // Handle errors
+      print('Error fetching recipe: $error');
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme
+            .of(context)
+            .colorScheme
+            .inversePrimary,
         title: Text(context.l10n.homeTitle),
       ),
       body: Center(
@@ -62,7 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(context.l10n.counterMessage),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headlineMedium,
             ),
           ],
         ),
