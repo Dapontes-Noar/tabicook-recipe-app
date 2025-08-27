@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:tabi_cook/core/network/exceptions/dio_client_exception.dart';
 import 'package:injectable/injectable.dart';
 
+/// A client for making HTTP requests using Dio.
 @lazySingleton
 class DioClient {
   final Dio _dio;

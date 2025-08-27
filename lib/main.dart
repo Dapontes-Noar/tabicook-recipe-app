@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tabi_cook/core/utils/extensions/context_extensions.dart';
 import 'package:tabi_cook/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tabi_cook/shared/widgets/my_custom_scroll_behavior.dart';
+import 'package:tabi_cook/styles/app_styles.dart';
 import 'core/di/injector.dart';
 
 Future<void> main() async {
@@ -19,56 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      scrollBehavior: MyCustomScrollBehavior(),
+      theme: ThemeData(colorScheme: $appStyles.colors.toColorScheme()),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: router,
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(context.l10n.homeTitle),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(context.l10n.counterMessage),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
 }

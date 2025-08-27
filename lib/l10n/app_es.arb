@@ -1,5 +1,8 @@
 {
   "@@locale": "es",
-  "homeTitle": "Bienvenido a la página de inicio",
-  "counterMessage": "Has presionado el botón estas veces:"
+  "homeTitle": "TabiCook",
+  "homeRecommendedTitle": "Recomendados",
+  "searchRecipes": "Buscar recetas",
+  "notFindRecipes": "No pudimos encontrar ninguna receta. Intenta con otra búsqueda",
+  "retry": "Reintentar"
 }

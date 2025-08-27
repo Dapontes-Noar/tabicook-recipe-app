@@ -46,3 +46,4 @@ dist/
 #auto generated files
 *.config.dart
 *.g.dart
+*.mocks.dart

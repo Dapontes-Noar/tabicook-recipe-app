@@ -101,14 +101,32 @@ abstract class AppLocalizations {
   /// No description provided for @homeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Welcome to the Home Page'**
+  /// **'TabiCook'**
   String get homeTitle;
 
-  /// No description provided for @counterMessage.
+  /// No description provided for @homeRecommendedTitle.
   ///
   /// In en, this message translates to:
-  /// **'You have pushed the button this many times:'**
-  String get counterMessage;
+  /// **'Recommended'**
+  String get homeRecommendedTitle;
+
+  /// No description provided for @searchRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Search recipes'**
+  String get searchRecipes;
+
+  /// No description provided for @notFindRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'We couldn\'t find any recipes. Try another search'**
+  String get notFindRecipes;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 }
 
 class _AppLocalizationsDelegate

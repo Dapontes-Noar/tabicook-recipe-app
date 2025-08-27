@@ -13,7 +13,6 @@ and **flutter_bloc / Cubit** for presentation.
 
 - Demo: *(pending link)*
 - CI: `.github/workflows/flutter-repo-checks.yml`
-- Submission archive: `DianaPonte_TabiCook_AllSamples_v1_<YYYYMMDD>.zip`
 - Author: Diana Aponte — primary author of all code in this repo.
 
 ---
@@ -43,6 +42,17 @@ and **flutter_bloc / Cubit** for presentation.
 - CI: GitHub Actions (`.github/workflows/flutter-repo-checks.yml`)
 
 ---
+
+## Features
+
+- Home screen with recipe categories.
+- Search recipes by name or ingredient. (inProgress)
+- View recipe details, including ingredients and instructions.(inProgress)
+- Save favorite recipes locally.(inProgress)
+- Create and manage a shopping list based on recipe ingredients.(inProgress)
+- Responsive design for various screen sizes.(inProgress)
+- Localization support for English and Spanish.(inProgress)
+- Clean and maintainable codebase following best practices.(inProgress)
 
 ## Architecture Overview
 
@@ -79,11 +89,14 @@ lib/
 ├─ main_dev.dart              # Main entry for development builds
 ├─ core/                      # Shared utilities, dependency injection, network, constants
 │  ├─ di/                     # Dependency injection setup (e.g., Get_it)
+|  |  └─ modules              # Dependency registration modules (e.g., RegisterModule)
 │  ├─ network/                # Network clients, API configuration (e.g., Dio)
 |  |   ├─ exceptions/         # Custom exceptions for network errors
 │  │   └─ interceptors/       # Dio interceptors for logging, auth, etc.
 │  ├─ utils/                  # Common utility functions and helpers
-|      └─extensions/          # Dart extensions
+|  |   ├─ constants/          # App-wide constants
+|  |   ├─ exceptions/         # General exceptions
+|      └─ extensions/         # Dart extensions
 ├─ [features]/                # Modular feature folders (specific for each feature) 
 │   ├─ data/                  # Data layer
 │   │  ├─ datasources/        # Remote/local data sources
@@ -253,3 +266,61 @@ This project uses the `intl` package for localization. To add a new language, fo
    ```
 3. Update the `supportedLocales` in `app.dart` to include the new language.
 4. Use the generated localization classes in your widgets, in this project we use `context.l10n.your_key`.
+
+## Testing
+
+This project includes unit and widget tests. To run the tests, use the following command:
+
+```bash
+  flutter test
+```
+
+## CI/CD
+
+This project is set up with GitHub Actions for continuous integration. The workflow file is located at
+`.github/workflows/flutter-repo-checks.yml`. It includes steps for formatting, code generation, analysis, testing, and
+coverage upload.
+
+## Styles
+
+The app-wide theming and styles are defined in the `lib/styles/` directory. In this folder you can implement the desing
+system of your choice.
+
+### AppColors
+
+The `AppColors` class defines the color scheme and gradients used throughout the app. It centralizes the color
+definitions to ensure consistency and maintainability in the app's design.
+
+### AppStyles
+
+The `AppStyles` class centralizes the application's styles, including text styles, colors, padding, and container
+styles. It ensures consistency and maintainability across the app by providing a single source of truth for all styling
+elements.
+
+---
+
+#### Class Overview
+
+##### `AppStyles`
+
+- **Purpose**: Acts as the main entry point for accessing all app styles.
+- **Components**:
+    - `text`: Contains text styles used throughout the app.
+    - `colors`: Provides access to the app's color palette via `AppColors`.
+    - `padding`: Defines consistent spacing values.
+    - `containerStyles`: Includes predefined container styles such as shapes and border radii.
+
+---
+
+## Usage
+
+To use the `AppStyles` class, access the singleton instance `$appStyles`:
+
+```dart
+import 'package:tabi_cook/styles/app_styles.dart';
+
+// Example usage
+final headingStyle = $appStyles.text.heading1;
+final paddingValue = $appStyles.padding.m;
+final containerDecoration = $appStyles.containerStyles.rounded;
+```
