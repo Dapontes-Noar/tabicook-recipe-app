@@ -5,9 +5,8 @@ import 'package:tabi_cook/features/recipes/domain/entities/category.dart';
 part 'categories_model.g.dart';
 
 /// Model representing a list of categories
-@JsonSerializable(includeIfNull: false)
+@JsonSerializable(includeIfNull: false, explicitToJson: true)
 class CategoriesModel {
-  @JsonKey(name: 'categories')
   final List<CategoryModel>? categories;
 
   CategoriesModel({this.categories});

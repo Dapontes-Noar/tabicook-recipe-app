@@ -1,6 +1,6 @@
 import 'package:tabi_cook/core/network/exceptions/dio_client_exception.dart';
 import 'package:tabi_cook/core/utils/exceptions/recipes_exception.dart';
-import 'package:tabi_cook/features/recipes/data/datasources%20/recipes_datasource.dart';
+import 'package:tabi_cook/features/recipes/data/datasources/recipes_datasource.dart';
 import 'package:tabi_cook/features/recipes/data/models/categories_model.dart';
 import 'package:tabi_cook/features/recipes/data/models/recipes_model.dart';
 import 'package:tabi_cook/features/recipes/domain/repositories/recipes_repository.dart';

@@ -4,7 +4,7 @@ import 'package:tabi_cook/features/recipes/domain/entities/recipe.dart';
 
 part 'recipes_model.g.dart';
 
-@JsonSerializable(includeIfNull: false)
+@JsonSerializable(includeIfNull: false, explicitToJson: true)
 class RecipesModel {
   @JsonKey(name: 'meals')
   final List<RecipeModel>? meals;
