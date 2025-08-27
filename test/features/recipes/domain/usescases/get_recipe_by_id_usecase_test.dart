@@ -32,7 +32,9 @@ void main() {
     final recipesModel = RecipesModel(meals: [recipeModel]);
 
     test('returns RecipeModel on success', () async {
-      when(mockRepository.getRecipesById(id)).thenAnswer((_) async => recipesModel);
+      when(
+        mockRepository.getRecipesById(id),
+      ).thenAnswer((_) async => recipesModel);
 
       final result = await useCase(id);
 
@@ -40,24 +42,28 @@ void main() {
       verify(mockRepository.getRecipesById(id)).called(1);
     });
 
-    test('throws RecipesException.noRecipesFound when no meals are found', () async {
-      when(mockRepository.getRecipesById(id)).thenAnswer((_) async => RecipesModel(meals: null));
+    test(
+      'throws RecipesException.noRecipesFound when no meals are found',
+      () async {
+        when(
+          mockRepository.getRecipesById(id),
+        ).thenAnswer((_) async => RecipesModel(meals: null));
 
-      expect(
-            () => useCase(id),
-        throwsA(isA<RecipesException>()),
-      );
-      verify(mockRepository.getRecipesById(id)).called(1);
-    });
+        expect(() => useCase(id), throwsA(isA<RecipesException>()));
+        verify(mockRepository.getRecipesById(id)).called(1);
+      },
+    );
 
-    test('throws RecipesException.noRecipesFound when meals list is empty', () async {
-      when(mockRepository.getRecipesById(id)).thenAnswer((_) async => RecipesModel(meals: []));
+    test(
+      'throws RecipesException.noRecipesFound when meals list is empty',
+      () async {
+        when(
+          mockRepository.getRecipesById(id),
+        ).thenAnswer((_) async => RecipesModel(meals: []));
 
-      expect(
-            () => useCase(id),
-        throwsA(isA<RecipesException>()),
-      );
-      verify(mockRepository.getRecipesById(id)).called(1);
-    });
+        expect(() => useCase(id), throwsA(isA<RecipesException>()));
+        verify(mockRepository.getRecipesById(id)).called(1);
+      },
+    );
   });
 }

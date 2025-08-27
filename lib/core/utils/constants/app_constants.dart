@@ -5,5 +5,4 @@ class AppConstants {
   static const String httpsString = 'https://';
   static const String iconKey = 'icon';
   static const String routeKey = 'route';
-
 }

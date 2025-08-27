@@ -69,7 +69,10 @@ void main() {
       expect(entity.name, model.strMeal);
       expect(entity.thumbnail, model.strMealThumb);
       expect(entity.ingredientsCount, model.ingredients?.length);
-      expect(entity.ingredients, model.ingredients?.whereType<String>().toList());
+      expect(
+        entity.ingredients,
+        model.ingredients?.whereType<String>().toList(),
+      );
       expect(entity.measures, model.measures?.whereType<String>().toList());
     });
   });

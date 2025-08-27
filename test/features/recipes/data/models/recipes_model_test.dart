@@ -20,8 +20,8 @@ void main() {
           'strIngredient2': 'Tomato',
           'strMeasure1': '200g',
           'strMeasure2': '100g',
-        }
-      ]
+        },
+      ],
     };
 
     final recipeModel = RecipeModel(

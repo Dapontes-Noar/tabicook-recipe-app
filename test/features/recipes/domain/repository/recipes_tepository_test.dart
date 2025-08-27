@@ -23,7 +23,9 @@ void main() {
     final categoriesModel = CategoriesModel(categories: []);
 
     test('getRecipesById returns RecipesModel', () async {
-      when(mockRepository.getRecipesById(id)).thenAnswer((_) async => recipesModel);
+      when(
+        mockRepository.getRecipesById(id),
+      ).thenAnswer((_) async => recipesModel);
 
       final result = await mockRepository.getRecipesById(id);
 
@@ -32,7 +34,9 @@ void main() {
     });
 
     test('getRecipesByName returns RecipesModel', () async {
-      when(mockRepository.getRecipesByName(name)).thenAnswer((_) async => recipesModel);
+      when(
+        mockRepository.getRecipesByName(name),
+      ).thenAnswer((_) async => recipesModel);
 
       final result = await mockRepository.getRecipesByName(name);
 
@@ -41,7 +45,9 @@ void main() {
     });
 
     test('getRecipesByCategory returns RecipesModel', () async {
-      when(mockRepository.getRecipesByCategory(category)).thenAnswer((_) async => recipesModel);
+      when(
+        mockRepository.getRecipesByCategory(category),
+      ).thenAnswer((_) async => recipesModel);
 
       final result = await mockRepository.getRecipesByCategory(category);
 
@@ -50,7 +56,9 @@ void main() {
     });
 
     test('getCategories returns CategoriesModel', () async {
-      when(mockRepository.getCategories()).thenAnswer((_) async => categoriesModel);
+      when(
+        mockRepository.getCategories(),
+      ).thenAnswer((_) async => categoriesModel);
 
       final result = await mockRepository.getCategories();
 
