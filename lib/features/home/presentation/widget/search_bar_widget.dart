@@ -16,8 +16,9 @@ class SearchBarWidget extends StatelessWidget {
       child: SearchBar(
         leading: const Icon(Icons.search),
         hintText: context.l10n.searchRecipes,
-        elevation: MaterialStateProperty.all(1),
-        backgroundColor: MaterialStateProperty.all(Colors.white),
+        backgroundColor: WidgetStateProperty.resolveWith(
+          (states) => $appStyles.colors.white,
+        ),
       ),
     );
   }

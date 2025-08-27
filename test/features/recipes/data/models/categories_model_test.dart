@@ -33,7 +33,7 @@ void main() {
     test('fromJson creates a valid model', () {
       final result = CategoriesModel.fromJson(json);
       expect(result.categories?.length, 1);
-      expect(result.categories?.first?.idCategory, '1');
+      expect(result.categories?.first.idCategory, '1');
     });
 
     test('toJson returns correct map', () {
@@ -44,7 +44,7 @@ void main() {
     test('toEntityList converts to domain entities', () {
       final entities = model.toEntityList();
       expect(entities.length, 1);
-      expect(entities.first?.name, 'Beef');
+      expect(entities.first.name, 'Beef');
     });
   });
 }

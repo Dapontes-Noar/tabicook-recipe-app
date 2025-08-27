@@ -53,7 +53,7 @@ class RecipeCardWidget extends StatelessWidget {
                 label: '${recipe.name} image',
                 image: true,
                 child: FadeInImage.assetNetwork(
-                  placeholder: AppImages.placeholderFood ?? '',
+                  placeholder: AppImages.placeholderFood,
                   placeholderFit: BoxFit.scaleDown,
                   image: recipe.thumbnail,
                   fit: BoxFit.cover,
