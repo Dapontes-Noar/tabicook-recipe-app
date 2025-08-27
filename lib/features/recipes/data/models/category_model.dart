@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:tabi_cook/features/recipes/domain/entities/category.dart';
 
 part 'category_model.g.dart';
 
@@ -25,4 +26,10 @@ class CategoryModel {
       _$CategoryModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$CategoryModelToJson(this);
+
+  Category toEntity() => Category(
+    id: idCategory ?? '',
+    name: strCategory ?? '',
+    image: strCategoryThumb ?? '',
+  );
 }

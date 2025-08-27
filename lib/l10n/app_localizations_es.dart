@@ -9,8 +9,18 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get homeTitle => 'Bienvenido a la página de inicio';
+  String get homeTitle => 'TabiCook';
 
   @override
-  String get counterMessage => 'Has presionado el botón estas veces:';
+  String get homeRecommendedTitle => 'Recomendados';
+
+  @override
+  String get searchRecipes => 'Buscar recetas';
+
+  @override
+  String get notFindRecipes =>
+      'No pudimos encontrar ninguna receta. Intenta con otra búsqueda';
+
+  @override
+  String get retry => 'Reintentar';
 }

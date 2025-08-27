@@ -1,5 +1,8 @@
 {
   "@@locale": "en",
-  "homeTitle": "Welcome to the Home Page",
-  "counterMessage": "You have pushed the button this many times:"
+  "homeTitle": "TabiCook",
+  "homeRecommendedTitle": "Recommended",
+  "searchRecipes": "Search recipes",
+  "notFindRecipes": "We couldn't find any recipes. Try another search",
+  "retry": "Retry"
 }

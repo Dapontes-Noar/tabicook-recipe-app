@@ -1,5 +1,5 @@
 import 'package:tabi_cook/core/utils/exceptions/recipes_exception.dart';
-import 'package:tabi_cook/features/recipes/data/models/recipes_model.dart';
+import 'package:tabi_cook/features/recipes/domain/entities/recipe.dart';
 import 'package:tabi_cook/features/recipes/domain/repositories/recipes_repository.dart';
 
 /// Use case for fetching recipes by category from the repository.
@@ -10,10 +10,10 @@ class GetRecipesByCategoryUseCase {
   GetRecipesByCategoryUseCase(this._repository);
 
   /// Fetches recipes by the given [category].
-  Future<RecipesModel> call(String category) async {
+  Future<List<Recipe>> call(String category) async {
     final response = await _repository.getRecipesByCategory(category);
     if (response.meals != null && response.meals!.isNotEmpty) {
-      return response;
+      return response.toEntityList();
     } else {
       throw RecipesException.noRecipesFound();
     }

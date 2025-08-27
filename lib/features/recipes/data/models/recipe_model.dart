@@ -1,6 +1,5 @@
-import 'dart:convert';
-
 import 'package:json_annotation/json_annotation.dart';
+import 'package:tabi_cook/features/recipes/domain/entities/recipe.dart';
 
 part 'recipe_model.g.dart';
 
@@ -62,6 +61,16 @@ class RecipeModel {
     data.addAll(MeasuresConverter().toJson(measures ?? []));
     return data;
   }
+
+  /// Converts this [RecipeModel] into a [Recipe] entity.
+  Recipe toEntity() => Recipe(
+    id: idMeal ?? '',
+    name: strMeal ?? '',
+    thumbnail: strMealThumb ?? '',
+    ingredientsCount: ingredients?.length ?? 0,
+    ingredients: ingredients?.whereType<String>().toList() ?? [],
+    measures: measures?.whereType<String>().toList() ?? [],
+  );
 }
 
 class IngredientsConverter
