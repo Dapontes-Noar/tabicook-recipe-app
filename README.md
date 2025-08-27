@@ -46,6 +46,11 @@ and **flutter_bloc / Cubit** for presentation.
 ## Features
 
 - Home screen with recipe categories.
+  
+
+https://github.com/user-attachments/assets/fba4f29b-a71d-4173-a73e-95a7386ed8a9
+
+
 - Search recipes by name or ingredient. (inProgress)
 - View recipe details, including ingredients and instructions.(inProgress)
 - Save favorite recipes locally.(inProgress)
