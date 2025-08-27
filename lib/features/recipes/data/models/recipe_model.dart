@@ -22,9 +22,9 @@ class RecipeModel {
   @JsonKey(name: 'strYoutube', includeFromJson: true, includeToJson: true)
   final String? strYoutube;
   @IngredientsConverter()
-  final List<String?>? ingredients;
+  final List<String>? ingredients;
   @MeasuresConverter()
-  final List<String?>? measures;
+  final List<String>? measures;
 
   RecipeModel({
     this.idMeal,
@@ -67,6 +67,7 @@ class RecipeModel {
     id: idMeal ?? '',
     name: strMeal ?? '',
     thumbnail: strMealThumb ?? '',
+    instructions: strInstructions ?? '',
     ingredientsCount: ingredients?.length ?? 0,
     ingredients: ingredients?.whereType<String>().toList() ?? [],
     measures: measures?.whereType<String>().toList() ?? [],

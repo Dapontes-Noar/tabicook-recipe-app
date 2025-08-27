@@ -37,6 +37,7 @@ void main() {
         name: 'Cake',
         thumbnail: 'http://example.com/cake.jpg',
         ingredientsCount: 2,
+        instructions: 'Bake the cake.',
         ingredients: ['Sugar', 'Flour'],
         measures: ['1 cup', '2 cups'],
         isFavorite: false,

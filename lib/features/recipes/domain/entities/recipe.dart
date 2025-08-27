@@ -4,6 +4,7 @@ class Recipe extends Equatable {
   final String id;
   final String name;
   final String thumbnail;
+  final String instructions;
   final int ingredientsCount;
   final List<String> ingredients;
   final List<String> measures;
@@ -13,6 +14,7 @@ class Recipe extends Equatable {
     required this.id,
     required this.name,
     required this.thumbnail,
+    required this.instructions,
     required this.ingredientsCount,
     required this.ingredients,
     required this.measures,
@@ -23,6 +25,7 @@ class Recipe extends Equatable {
     id: id,
     name: name,
     thumbnail: thumbnail,
+    instructions: instructions,
     ingredientsCount: ingredientsCount,
     ingredients: ingredients,
     measures: measures,
@@ -34,6 +37,7 @@ class Recipe extends Equatable {
     id,
     name,
     thumbnail,
+    instructions,
     ingredientsCount,
     ingredients,
     measures,
