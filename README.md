@@ -46,10 +46,8 @@ and **flutter_bloc / Cubit** for presentation.
 ## Features
 
 - Home screen with recipe categories.
-  
 
 https://github.com/user-attachments/assets/fba4f29b-a71d-4173-a73e-95a7386ed8a9
-
 
 - Search recipes by name or ingredient. (inProgress)
 - View recipe details, including ingredients and instructions.(inProgress)
@@ -162,24 +160,33 @@ for Flutter development.
    ```bash
    flutter pub run build_runner build --delete-conflicting-outputs
    ```
-3. Generate localization files
+3. Run the app
    ```bash
-   flutter pub run intl_utils:generate
-   ```
-4. Run the app
-   ```bash
-    flutter run -t lib/main_dev.dart
+    flutter run -t lib/main.dart
     ```
+### Generate for platforms
 
-Can you use this command for installation, code generation and localization in one step:
+This project support multiple platforms: iOS, Android and Web, you can run the app in your desired platform using:
+
+#### Generate platforms
+
+For Android (unsigned) APK generation, use:
 
 ```bash
-  flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
+  flutter build apk -t lib/main.dart
 ```
 
-To document the use of a general registration class named `RegisterModule` for dependency injection, add a section to
-your `README.md` like this:
+For app bundle (AAB):
 
+```bash
+    flutter build appbundle -t lib/main.dart
+```
+
+For Web:
+
+```bash
+  flutter build web -t lib/main.dart
+````
 ---
 
 # Developer Guide
