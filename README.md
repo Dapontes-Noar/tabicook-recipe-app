@@ -17,7 +17,7 @@ and **flutter_bloc / Cubit** for presentation.
 
 ---
 
-## What this sample demonstrates (mapped to Fueled request)
+## What this sample demonstrates
 
 - **UI Composition**: component-based widgets, responsive recipe cards, widget tests.
 - **Data Persistence**: Hive usage for Favorites & Shopping List (manual TypeAdapters included).
