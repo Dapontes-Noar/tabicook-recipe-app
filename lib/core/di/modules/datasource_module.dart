@@ -9,5 +9,4 @@ abstract class DataSourceModule {
   // Register your data sources here
   @lazySingleton
   RecipesDataSource recipesDataSource() => RecipesDataSourceImpl(getIt<Dio>());
-
 }

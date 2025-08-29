@@ -43,6 +43,8 @@ dist/
 # Misc
 .DS_Store
 *.log
+ci-artifacts/
+coverage/
 
 #auto generated files
 *.config.dart
